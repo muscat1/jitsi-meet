@@ -1,1 +1,336 @@
 /** Insert custom CSS for any additional content in the welcome page **/
+
+.welcome-page-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+}
+
+.welcome-page-extra-content {
+    padding-bottom: 88px;
+}
+.welcome-app-description-container {
+    justify-content: center;
+    align-items: center;
+    max-height: 152px;
+    width: 100%;
+    display: flex;
+    background-color: #14C9A2;
+    padding: 32px 0 34px;
+}
+
+.welcome-app-description-text {
+    width: 608px;
+    color: #fff;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    word-break: break-word;
+    text-align: center;
+}
+
+.welcome-content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #fff;
+    width: calc(100% - 188px);
+    padding: 32px 94px 106px;
+    overflow: hidden;
+}
+
+.welcome-content-header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.welcome-header-title {
+    font-size: 32px;
+    line-height: 40px;
+    color: #0E0E22;
+}
+
+.welcome-header-subtitle {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    color: #76787B;
+}
+
+.welcome-feature-list {
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-self: center;
+    margin-top: 24px;
+}
+
+.welcome-feature-item {
+    height: 125px;
+    width: 125px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcome-feature-icon {
+    height: 64px;
+    width: 64px;
+    border-radius: 50%;
+    border: 1px solid #CBD8E4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 16px;
+}
+
+.welcome-feature-title {
+    height: 36px;
+    width: 100%;
+    margin-top: 8px;
+    font-size: 14px;
+    line-height: 18px;
+    color: #1C2025;
+    text-align: center;
+}
+
+.welcome-button.welcome-button {
+    align-items: center;
+    border-radius: 24px;
+    cursor: pointer;
+    display: flex;
+    font-weight: 600;
+    font-size: 14px;
+    min-height: 40px;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.welcome-sign-up-free {
+    align-self: center;
+    background: #0A57EB;
+    color: #fff !important;
+    width: 177px;
+    margin-top: 24px;
+}
+
+.welcome-content {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-top: 64px;
+}
+
+.welcome-content-apps {
+    position: relative;
+    margin-right: 86px;
+    margin-bottom: 18px;
+}
+
+.welcome-content-apps-vom {
+    position: absolute;
+    top: 36px;
+    left: 450px;
+}
+
+.welcome-content-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 316px;
+    min-height: 293px;
+}
+
+.welcome-content-details-text-large {
+    color: #000;
+    font-size: 32px;
+    line-height: 40px;
+}
+
+.welcome-content-details-text-medium {
+    color: #000;
+    font-size: 20px;
+    line-height: 26px;
+    max-width: 264px;
+}
+
+.welcome-content-details-text-small {
+    color: #000;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.welcome-app-icons {
+    width: 104px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.welcome-get-our-apps {
+    align-self: flex-start;
+    border: 1px solid #0A57EB;
+    color: #0A57EB !important;
+    width: 154px;
+    margin-top: 24px;
+}
+
+.welcome-footer {
+    width: calc(100% - 64px);
+    height: 88px;
+    padding: 0 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: absolute;
+    bottom: 0;
+    background-color: #CBD8E4;
+    overflow: hidden;
+
+    a {
+        cursor: pointer;
+    }
+
+}
+
+.welcome-footer-links {
+    display: flex;
+    justify-content: space-between;
+    color: #000 !important;
+    font-size: 13px;
+    min-width: 527px;
+
+    a {
+        color: #000 !important;
+        font-weight: 600;
+        margin-left: 16px;
+    }
+}
+
+.welcome-footer-links-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.welcome-footer-icons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.welcome-footer-icons-social {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 120px;
+}
+
+.welcome-footer-icons-apps {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 37px;
+    min-width: 270px;
+}
+
+.welcome-toolbar-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.welcome-sign-up {
+    background: #fff;
+    color: #000 !important;
+    width: 124px;
+    margin-left: 50px;
+}
+
+.welcome-log-in {
+    color: #fff !important;
+    font-weight: 600;
+}
+
+@media only screen  and (max-width: 450px) {
+    .welcome-content-container {
+        width: calc(100% - 48px);
+        padding: 24px 24px 43px;
+    }
+
+    .welcome-content-apps {
+        margin-right: 36px;
+    }
+
+    .welcome-content-apps-vod {
+        max-width: 280px;
+    }
+
+    .welcome-content-apps-vom {
+        max-width: 84px;
+        left: 243px;
+        top: 13px;
+    }
+
+    .welcome-button.welcome-get-our-apps, .welcome-footer-icons-apps, .welcome-toolbar-buttons {
+        display: none;
+    }
+
+    .welcome-page-extra-content {
+        padding-bottom: 200px;
+    }
+
+    .welcome-footer {
+        height: 112px;
+        padding: 24px 24px 64px;
+        width: calc(100% - 48px);
+        justify-content: center;
+    }
+
+    .welcome-footer-links {
+        display: block;
+        text-align: center;
+        min-width: 100%;
+    }
+
+    .welcome-feature-list {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .welcome-feature-item {
+        flex-direction: row;
+        height: inherit;
+        width: inherit;
+        margin-bottom: 20px;
+    }
+
+    .welcome-feature-icon {
+        border: none;
+        height: inherit;
+        width: 36px;
+        margin-top: 0;
+    }
+
+    .welcome-feature-title {
+        margin-top: 0;
+        height: inherit;
+        text-align: initial;
+
+    }
+
+    .welcome-sign-up {
+        margin-left: 0;
+    }
+
+    .welcome-content-details {
+        text-align: center;
+        align-items: center;
+    }
+
+}

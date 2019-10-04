@@ -163,7 +163,8 @@ $watermarkHeight: 74px;
  */
 $welcomePageDescriptionColor: #fff;
 $welcomePageFontFamily: inherit;
-$welcomePageHeaderBackground: linear-gradient(-90deg, #1251AE 0%, #0074FF 50%, #1251AE 100%);
+$welcomePageHeaderBackground: url('../images/welcome-background.jpg');
+$welcomePageHeaderBackgroundSmall: url('../images/welcome-background-small.png');
 $welcomePageTitleColor: #fff;
 
 /**
