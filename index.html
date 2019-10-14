@@ -138,17 +138,206 @@
         window.addEventListener(
             'error', loadErrHandler, true /* capture phase type of listener */);
     </script>
-    <script><!--#include virtual="/config.js" --></script><!-- adapt to your needs, i.e. set hosts and bosh path -->
+    <script src="interface_config.js"></script>
+    <script src="logging_config.js"></script>
+    <script src="config.js"></script>
     <!--#include virtual="connection_optimization/connection_optimization.html" -->
     <script src="libs/do_external_connect.min.js?v=1"></script>
-    <script><!--#include virtual="/interface_config.js" --></script>
-    <script><!--#include virtual="/logging_config.js" --></script>
     <script src="libs/lib-jitsi-meet.min.js?v=139"></script>
     <script src="libs/app.bundle.min.js?v=139"></script>
     <!--#include virtual="title.html" -->
     <!--#include virtual="plugin.head.html" -->
-    <!--#include virtual="static/welcomePageAdditionalContent.html" -->
+    <!--#include virtual="static/welcomePageAdditionalContent.html" --> 
   </head>
+  <template id="welcome-page-additional-content-template">
+    <div class="welcome-page-extra-content">
+        <div class="welcome-app-description-container">
+            <span class="welcome-app-description-text">
+                Go ahead, video chat with the whole team. In fact, invite everyone you know.
+                8x8 Meetings is a fully encrypted, 100% open source video conferencing
+                solution that you can use all day, for free – with no account needed.
+            </span>
+        </div>
+        <div class="welcome-content-container">
+            <div class="welcome-content-header">
+                <span class="welcome-header-title">Create a free account</span>
+                <span class="welcome-header-subtitle">and get more features:</span>
+            </div>
+            <div class="welcome-feature-list">
+                <div class="welcome-feature-item">
+                    <div class="welcome-feature-icon">
+                        <img src="images/link.svg" />
+                    </div>
+                    <div class="welcome-feature-title">
+                        custom domain for your team
+                    </div>
+                </div>
+                <div class="welcome-feature-item">
+                    <div class="welcome-feature-icon">
+                        <img src="images/user.svg" />
+                    </div>
+                    <div class="welcome-feature-title">
+                        personal meeting space
+                    </div>
+                </div>
+                <div class="welcome-feature-item">
+                    <div class="welcome-feature-icon">
+                        <img src="images/calendar.svg" />
+                    </div>
+                    <div class="welcome-feature-title">
+                        calendar sync
+                    </div>
+                </div>
+                <div class="welcome-feature-item">
+                    <div class="welcome-feature-icon">
+                        <img src="images/clock-rewinds.svg" />
+                    </div>
+                    <div class="welcome-feature-title">
+                        meetings history
+                    </div>
+                </div>
+                <div class="welcome-feature-item">
+                    <div class="welcome-feature-icon">
+                        <img src="images/pairSpot.svg" />
+                    </div>
+                    <div class="welcome-feature-title">
+                        1 Meeting Room
+                    </div>
+                </div>
+            </div>
+            <a
+                class="welcome-button welcome-sign-up-free"
+                href="https://app.8x8.vc?register=true"
+                id="signUpFreeButton"
+                rel="noopener"
+                target="_blank">
+                Sign Up for Free
+            </a>
+            <div class="welcome-content">
+                <div class="welcome-content-apps">
+                    <img
+                        class="welcome-content-apps-vod"
+                        src="images/preview-vod.png" />
+                    <img
+                        class="welcome-content-apps-vom"
+                        src="images/preview-vom.png" />
+                </div>
+                <div class="welcome-content-details">
+                    <span class="welcome-content-details-text-large">Use it everywhere</span>
+                    <span class="welcome-content-details-text-medium">
+                        Available as web, desktop & mobile app
+                    </span>
+                    <span class="welcome-content-details-text-small">
+                        Schedule, start or join HD video and audio conferences
+                        from any device or room with no friction.
+                    </span>
+                    <div class="welcome-app-icons">
+                        <img src="images/windows.svg" />
+                        <img src="images/apple.svg" />
+                        <img src="images/android.svg" />
+                    </div>
+                    <a
+                        class="welcome-button welcome-get-our-apps"
+                        rel="noopener"
+                        target="_blank">
+                        Get our apps
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="welcome-footer">
+            <div class="welcome-footer-links">
+                <span>&#9400; 8x8, Inc. All rights reserved.</span>
+                <div class="welcome-footer-links-info">
+                    <a
+                        href="https://www.8x8.com/terms-and-conditions/privacy-policy"
+                        rel="noopener"
+                        target="_blank">
+                        Privacy Policy
+                    </a>
+                    <a
+                        href="https://www.8x8.com/terms-and-conditions/cookies"
+                        rel="noopener"
+                        target="_blank">
+                        Cookies
+                    </a>
+                    <a
+                        href="https://www.8x8.com/terms-and-conditions"
+                        rel="noopener"
+                        target="_blank">
+                        Terms and Conditions
+                    </a>
+                </div>
+            </div>
+            <div class="welcome-footer-icons">
+                <div class="welcome-footer-icons-social">
+                    <a
+                        href="https://www.facebook.com/8x8Inc"
+                        rel="noopener"
+                        target="_blank">
+                        <img src="images/fb.svg" />
+                    </a>
+                    <a
+                        href="https://twitter.com/8x8"
+                        rel="noopener"
+                        target="_blank">
+                        <img src="images/twitter.svg" />
+                    </a>
+                    <a
+                        href="https://www.linkedin.com/company/8x8"
+                        rel="noopener"
+                        target="_blank">
+                        <img src="images/linkedin.svg" />
+                    </a>
+                </div>
+                <div class="welcome-footer-icons-apps">
+                    <a
+                        rel="noopener"
+                        target="_blank">
+                        <img src="images/app-store-badge.svg" />
+                    </a>
+                    <a
+                        rel="noopener"
+                        target="_blank">
+                        <img src="images/google-play-badge.svg" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+<template id="settings-toolbar-additional-content-template">
+    <div class="welcome-toolbar-buttons">
+        <a
+            class="welcome-button welcome-log-in"
+            href="https://app.8x8.vc?login=true"
+            id="logInButton"
+            rel="noopener"
+            target="_blank" >
+            Log In
+        </a>
+        <a
+            class="welcome-button welcome-sign-up"
+            href="https://app.8x8.vc?register=true"
+            id="signUpButton"
+            rel="noopener"
+            target="_blank">
+            Sign Up
+        </a>
+    </div>
+    <script>
+        const { domainUrl } = config;
+
+        if (domainUrl) {
+            const logInUrl = domainUrl + '?login=true';
+            const signUpUrl = domainUrl + '?register=true';
+
+            document.getElementById('logInButton').setAttribute('href', logInUrl);
+            document.getElementById('signUpButton').setAttribute('href', signUpUrl);
+            document.getElementById('signUpFreeButton').setAttribute('href', signUpUrl);
+        }
+    </script>
+</template>
   <body>
     <div id="react"></div>
   </body>

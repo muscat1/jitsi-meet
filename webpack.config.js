@@ -249,7 +249,10 @@ function devServerProxyBypass({ path }) {
     if (path.startsWith('/css/') || path.startsWith('/doc/')
             || path.startsWith('/fonts/') || path.startsWith('/images/')
             || path.startsWith('/sounds/')
-            || path.startsWith('/static/')) {
+            || path.startsWith('/static/')
+            || path === '/'
+            || path === '/interface_config.js'
+            || path === '/config.js') {
         return path;
     }
 
