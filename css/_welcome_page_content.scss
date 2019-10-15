@@ -333,4 +333,16 @@
         align-items: center;
     }
 
+    .header.header {
+        background-image: $welcomePageHeaderBackgroundSmall;
+    }
+}
+
+/**
+ * Hides toolbar settings button since it is the first direct child
+ * of the settings tab in WelcomePage. It is then followed by the
+ * additional content added from settingsToolbarAdditionalContent.html.
+*/
+.welcome-page-settings > div:first-child {
+    display: none;
 }
