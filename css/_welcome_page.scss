@@ -38,7 +38,7 @@ body.welcome-page {
 
         .header-text-title {
             color: $welcomePageTitleColor;
-            font-size: 2.5rem;
+            font-size: $welcomePageHeaderTextTitleFontSize;
             font-weight: 500;
             line-height: 1.18;
             margin-bottom: $welcomePageHeaderTextTitleMarginBottom;
@@ -148,8 +148,9 @@ body.welcome-page {
 
     .welcome-page-button {
         width: $welcomePageButtonWidth;
+        min-width: $welcomePageButtonMinWidth;
         height: $welcomePageButtonHeight;
-        font-size: 14px;
+        font-size: $welcomePageButtonFontSize;
         font-weight: $welcomePageButtonFontWeight;
         background: #0074E0;
         border-radius: $welcomePageButtonBorderRadius;

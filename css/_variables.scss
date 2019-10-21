@@ -166,17 +166,17 @@ $welcomePageFontFamily: inherit;
 $welcomePageBackground: none;
 $welcomePageTitleColor: #fff;
 
-$welcomePageHeaderBackground: url('../images/welcome-background.jpg');
-$welcomePageHeaderBackgroundSmall: url('../images/welcome-background-small.png');
+$welcomePageHeaderBackground: url('../images/welcome-background.png');
 $welcomePageHeaderBackgroundPosition: center;
 $welcomePageHeaderBackgroundRepeat: no-repeat;
 $welcomePageHeaderBackgroundSize: cover;
-$welcomePageHeaderPaddingBottom: 40px;
+$welcomePageHeaderPaddingBottom: 60px;
 
-$welcomePageHeaderTextMarginTop: 254px;
-$welcomePageHeaderTextMarginBottom: 40px;
+$welcomePageHeaderTextMarginTop: 190px;
+$welcomePageHeaderTextMarginBottom: 24px;
 
 $welcomePageHeaderTextTitleMarginBottom: 0px;
+$welcomePageHeaderTextTitleFontSize: 0;
 
 $welcomePageHeaderTextDescriptionDisplay: none;
 
@@ -184,7 +184,7 @@ $welcomePageEnterRoomWidth: 560px;
 $welcomePageEnterRoomPadding: 0px;
 $welcomePageEnterRoomBorderRadius: 24px;
 
-$welcomePageEnterRoomInputContainerPadding: 0 8px 0 32px;
+$welcomePageEnterRoomInputContainerPadding: 0 8px 0 16px;
 $welcomePageEnterRoomInputContainerBorderWidth: 0px;
 $welcomePageEnterRoomInputContainerBorderStyle: none;
 $welcomePageEnterRoomInputContainerBorderImage: none;
@@ -197,7 +197,9 @@ $welcomePageTabButtonsDisplay: none;
 $welcomePageTabDisplay: none;
 
 $welcomePageButtonWidth: 156px;
+$welcomePageButtonMinWidth: 156px;
 $welcomePageButtonHeight: 48px;
+$welcomePageButtonFontSize: 0;
 $welcomePageButtonFontWeight: 600;
 $welcomePageButtonBorderRadius: 0 24px 24px 0;
 $welcomePageButtonLineHeight: 48px;
