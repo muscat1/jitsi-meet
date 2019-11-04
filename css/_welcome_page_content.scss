@@ -1,7 +1,4 @@
-/** Insert custom CSS for any additional content in the welcome page **/
-
-// Edit some elements to accomodate new design
-
+// FIXME: Implement generic approach at open-source level.
 #enter_room:before {
     content: '8x8.vc';
     color: black;
@@ -11,25 +8,6 @@
     line-height: 48px;
     padding: 0 16px;
     font-size: 14px;
-}
-
-.welcome-page-button:after {
-    content: 'Start meeting';
-    font-size: 14px;
-}
-
-.header-text:after {
-    content: 'Start a meeting now with one click';
-    font-weight: 600;
-    font-size: 28px;
-    color: #fff;
-    margin-top: 40px;
-}
-
-.header-text-title:after {
-    content: 'Secure, fully-featured and free video conferencing';
-    font-size: 42px;
-    opacity: 0.8;
 }
 
 .welcome-page-content {
@@ -68,7 +46,7 @@
     justify-content: space-between;
     background: #fff;
     width: calc(100% - 188px);
-    padding: 60px 94px 106px;
+    padding: 60px 94px 103px;
     overflow: hidden;
 }
 
@@ -81,13 +59,13 @@
 }
 
 .welcome-header-title {
-    font-size: 32px;
-    line-height: 40px;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 36px;
     color: #0E0E22;
 }
 
 .welcome-header-subtitle {
-    font-weight: 500;
     font-size: 16px;
     line-height: 22px;
     color: #76787B;
@@ -247,7 +225,7 @@
 
 .welcome-footer-links-info {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .welcome-footer-icons {
@@ -286,10 +264,22 @@
     font-weight: 600;
 }
 
-@media only screen and (max-width: 450px) {
+// Mobile layout.
+@media only screen and (max-width: 425px) {
     .welcome-content-container {
         width: calc(100% - 48px);
-        padding: 24px 24px 43px;
+        padding: 60px 24px 43px;
+    }
+
+    .welcome-header-title {
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 29px;
+    }
+
+    .welcome-header-subtitle {
+        font-size: 16px;
+        line-height: 22px;
     }
 
     .welcome-content-apps {
@@ -306,25 +296,21 @@
         top: 13px;
     }
 
-    .welcome-button.welcome-get-our-apps, .welcome-footer-icons-apps, .welcome-toolbar-buttons {
+    .welcome-footer-icons-apps, .welcome-toolbar-buttons {
         display: none;
     }
 
-    .welcome-page-extra-content {
-        padding-bottom: 200px;
+    .welcome-get-our-apps {
+        align-self: center;
+        height: 48px;
+        width: 260px;
+        font-size: 16px;
     }
 
-    .welcome-footer {
-        height: 112px;
-        padding: 24px 24px 64px;
-        width: calc(100% - 48px);
-        justify-content: center;
-    }
-
-    .welcome-footer-links {
-        display: block;
-        text-align: center;
-        min-width: 100%;
+    .welcome-sign-up-free {
+        height: 48px;
+        width: 260px;
+        font-size: 16px;
     }
 
     .welcome-feature-list {
@@ -360,15 +346,30 @@
     .welcome-content-details {
         text-align: center;
         align-items: center;
+        justify-content: space-evenly;
     }
 
-
-    .welcome .header #enter_room .enter-room-input-container {
-        display: none;
+    .welcome-content-details-text-large {
+        color: #000;
+        font-size: 24px;
+        line-height: 29px;
+    }
+    
+    .welcome-content-details-text-medium {
+        color: #76787B;
+        font-size: 16px;
+        line-height: 22px;
+        max-width: 294px;
+    }
+    
+    .welcome-content-details-text-small {
+        color: #000;
+        font-size: 16px;
+        line-height: 22px;
     }
 
     .welcome .header #enter_room:before {
-        content: none;
+        display: none;
     }
 
     .welcome .header #enter_room {
@@ -376,24 +377,100 @@
     }
 
     .welcome .welcome-page-button {
-        border-radius: 24px;
-        width: 260px;
+        min-width: 87px;
+    }
+
+    .welcome .welcome-page-button {
+        font-size: 16px;
     }
 
     .welcome .header .header-text {
-        margin-top: 140px;
+        margin-top: 160px;
     }
 
-    .header-text-title:after {
+    .welcome .header .header-text-title {
         font-size: 28px;
+        line-height: 36px;
+        margin-bottom: 24px;
     }
 
-    .header-text:after {
+    .welcome .header .header-text-description {
         font-size: 24px;
+        line-height: 29px;
+        width: 240px;
     }
 
 }
 
+@media only screen and (max-width: 900px) {
+    .welcome-content-container {
+        width: calc(100% - 64px);
+        padding: 60px 32px 76px;
+    }
+}
+
+// Tablet layout.
+@media only screen and (max-width: 768px) {
+    .welcome-page-extra-content {
+        padding-bottom: 200px;
+    }
+
+    .welcome-footer {
+        height: 112px;
+        padding: 24px 24px 64px;
+        width: calc(100% - 48px);
+        justify-content: center;
+    }
+
+    .welcome-footer-links {
+        display: block;
+        text-align: center;
+    }
+
+    .welcome-footer-links-info {
+        display: block;
+        margin-top: 18px;
+    }
+
+    .welcome-footer-icons-apps {
+        display: none;
+    }
+
+    .welcome-footer-icons-social {
+        min-width: 208px;
+        margin-top: 32px;
+        a {
+            display: flex;
+            justify-content: center;
+            border-radius: 50%;
+            border: 1px solid rgba(21, 21, 49, 0.4);
+            height: 50px;
+            width: 50px;
+        }
+    }
+}
+
+/**
+ * Keep the application images scaled down in order to accommodate
+ * smoother transitions.
+*/
+@media only screen and (min-width: 426px) and (max-width: 1115px) {
+    .welcome-content-apps {
+        margin-right: 88px;
+    }
+
+    .welcome-content-apps-vod {
+        max-width: 298px;
+    }
+
+    .welcome-content-apps-vom {
+        max-width: 91px;
+        left: 256px;
+        top: 21px;
+    }
+}
+
+// Large screen layout.
 @media only screen and (min-width: 1550px) {
     .welcome .header {
         background-size: contain;

@@ -155,14 +155,16 @@ $unsupportedDesktopBrowserTextFontSize: 21px;
 /**
  * The size of the default watermark.
  */
-$watermarkWidth: 186px;
-$watermarkHeight: 74px;
+$watermarkWidth: 70px;
+$watermarkHeight: 35px;
 
 /**
  * Welcome page variables.
  */
+@import url('https://rsms.me/inter/inter.css');
+
 $welcomePageDescriptionColor: #fff;
-$welcomePageFontFamily: inherit;
+$welcomePageFontFamily: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $welcomePageBackground: none;
 $welcomePageTitleColor: #fff;
 
@@ -175,10 +177,18 @@ $welcomePageHeaderPaddingBottom: 60px;
 $welcomePageHeaderTextMarginTop: 190px;
 $welcomePageHeaderTextMarginBottom: 24px;
 
-$welcomePageHeaderTextTitleMarginBottom: 0px;
-$welcomePageHeaderTextTitleFontSize: 0;
+$welcomePageHeaderTextTitleMarginBottom: 40px;
+$welcomePageHeaderTextTitleFontSize: 42px;
+$welcomePageHeaderTextTitleFontWeight: normal;
+$welcomePageHeaderTextTitleLineHeight: 50px;
+$welcomePageHeaderTextTitleOpacity: 0.8;
 
-$welcomePageHeaderTextDescriptionDisplay: none;
+$welcomePageHeaderTextDescriptionDisplay: inherit;
+$welcomePageHeaderTextDescriptionFontSize: 28px;
+$welcomePageHeaderTextDescriptionFontWeight: 600;
+$welcomePageHeaderTextDescriptionLineHeight: 36px;
+$welcomePageHeaderTextDescriptionMarginBottom: 0;
+$welcomePageHeaderTextDescriptionAlignSelf: center;
 
 $welcomePageEnterRoomWidth: 560px;
 $welcomePageEnterRoomPadding: 0px;
@@ -199,7 +209,7 @@ $welcomePageTabDisplay: none;
 $welcomePageButtonWidth: 156px;
 $welcomePageButtonMinWidth: 156px;
 $welcomePageButtonHeight: 48px;
-$welcomePageButtonFontSize: 0;
+$welcomePageButtonFontSize: 14px;
 $welcomePageButtonFontWeight: 600;
 $welcomePageButtonBorderRadius: 0 24px 24px 0;
 $welcomePageButtonLineHeight: 48px;
