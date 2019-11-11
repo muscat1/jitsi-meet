@@ -132,14 +132,14 @@
 
 .welcome-content {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     flex-wrap: wrap;
     margin-top: 64px;
 }
 
 .welcome-content-apps {
     position: relative;
-    margin-right: 86px;
+    margin-right: 126px;
     margin-bottom: 18px;
 }
 
@@ -454,7 +454,7 @@
  * Keep the application images scaled down in order to accommodate
  * smoother transitions.
 */
-@media only screen and (min-width: 426px) and (max-width: 1115px) {
+@media only screen and (min-width: 426px) and (max-width: 1155px) {
     .welcome-content-apps {
         margin-right: 88px;
     }

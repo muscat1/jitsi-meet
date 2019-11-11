@@ -16,23 +16,11 @@ import { CHROME, FIREFOX } from './browserLinks';
 const _SNS = 'unsupported-desktop-browser';
 
 /**
- * The type of the React {@code Component} props of
- * {@link UnsupportedDesktopBrowser}.
- */
-type Props = {
-
-    /**
-     * The function to translate human-readable text.
-     */
-    t: Function
-};
-
-/**
  * React component representing unsupported browser page.
  *
  * @class UnsupportedDesktopBrowser
  */
-class UnsupportedDesktopBrowser extends Component<Props> {
+class UnsupportedDesktopBrowser extends Component<{}> {
     /**
      * Renders the component.
      *
@@ -41,20 +29,69 @@ class UnsupportedDesktopBrowser extends Component<Props> {
     render() {
         return (
             <div className = { _SNS }>
-                <h2 className = { `${_SNS}__title` }>
-                    It looks like you're using a browser we don't support.
-                </h2>
-                <p className = { `${_SNS}__description` }>
-                    Please try again with the latest version of&nbsp;
-                    <a
-                        className = { `${_SNS}__link` }
-                        href = { CHROME } >Chrome</a>&nbsp;
-                    {
-                        this._showFirefox() && <>and <a
-                            className = { `${_SNS}__link` }
-                            href = { FIREFOX }>Firefox</a></>
-                    }
-                </p>
+                <div className = 'unsupported-browser-content'>
+                    <img src = 'images/unsupported-browser/logo.png' />
+                    <span className = 'unsupported-browser-title'>
+                        Our meetings leverages best-of-breed WebRTC and the browser you are using doesn't support it.
+                    </span>
+                    <div className = 'unsupported-browser-apps-container'>
+                        <span className = 'unsupported-browser-apps-header'>
+                            Download our desktop app
+                        </span>
+                        <div className = 'unsupported-browser-apps'>
+                            <a
+                                className = 'unsupported-browser-app-button'
+                                href = 'https://vod-updates.8x8.com/ga/meet-dmg-latest.dmg'
+                                rel = 'noopener noreferrer'
+                                target = '_blank'>
+                                <img src = 'images/unsupported-browser/apple.svg' />
+                                macOS
+                            </a>
+                            <a
+                                className = 'unsupported-browser-app-button rightmost'
+                                href = 'https://vod-updates.8x8.com/ga/meet-exe-latest.exe'
+                                rel = 'noopener noreferrer'
+                                target = '_blank'>
+                                <img src = 'images/unsupported-browser/windows.svg' />
+                                Windows
+                            </a>
+                        </div>
+                    </div>
+                    <span className = 'unsupported-browser-subtitle'>
+                        Or use the latest version of&nbsp;
+                        <a
+                            className = 'unsupported-browser-link'
+                            href = { CHROME }
+                            rel = 'noopener noreferrer'
+                            target = '_blank'>
+                            Chrome
+                        </a>
+                        {
+                            this._showFirefox()
+                            && <>
+                                &nbsp;or&nbsp;
+                                <a
+                                    className = 'unsupported-browser-link'
+                                    href = { FIREFOX }
+                                    rel = 'noopener noreferrer'
+                                    target = '_blank'>
+                                    Firefox
+                                </a>
+                            </>
+                        }
+                    </span>
+                    <div className = 'unsupported-browser-separator' />
+                    <span className = 'unsupported-browser-footer'>
+                        Are you looking for&nbsp;
+                        <a
+                            className = 'unsupported-browser-link'
+                            href = 'https://www.8x8.com/voip-business-phone-services/features/virtual-office-desktop'
+                            rel = 'noopener noreferrer'
+                            target = '_blank'>
+                        8x8 Virtual Office?
+                        </a>
+                    </span>
+                </div>
             </div>
         );
     }
