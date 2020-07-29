@@ -1,1 +1,30 @@
-<template id="settings-toolbar-additional-content-template"></template>
+<template id="settings-toolbar-additional-content-template">
+    <div class="welcome-toolbar-buttons">
+        <a
+            href="https://app.8x8.vc?login=true"
+            id="logInButton"
+            rel="noopener"
+            target="_blank" >
+            Log In
+        </a>
+        <a
+            href="https://app.8x8.vc/payments"
+            id="signUpButton"
+            rel="noopener"
+            target="_blank">
+            Sign Up
+        </a>
+    </div>
+    <script>
+        const { _8x8VideoMeetingsUrl } = config;
+
+        if (_8x8VideoMeetingsUrl) {
+            const logInUrl = `${_8x8VideoMeetingsUrl}/?login=true`;
+            const paymentsUrl = `${_8x8VideoMeetingsUrl}/payments`;
+
+            document.getElementById('welcomeTryFree').setAttribute('href', paymentsUrl);
+            document.getElementById('logInButton').setAttribute('href', logInUrl);
+            document.getElementById('signUpButton').setAttribute('href', paymentsUrl);
+        }
+    </script>
+</template>

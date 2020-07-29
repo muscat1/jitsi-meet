@@ -151,16 +151,258 @@
         window.addEventListener(
             'error', loadErrHandler, true /* capture phase type of listener */);
     </script>
-    <script><!--#include virtual="/config.js" --></script><!-- adapt to your needs, i.e. set hosts and bosh path -->
+    <script src="interface_config.js"></script>
+    <script src="logging_config.js"></script>
+    <script src="config.js"></script>
     <!--#include virtual="connection_optimization/connection_optimization.html" -->
     <script src="libs/do_external_connect.min.js?v=1"></script>
-    <script><!--#include virtual="/interface_config.js" --></script>
-    <script><!--#include virtual="/logging_config.js" --></script>
     <script src="libs/lib-jitsi-meet.min.js?v=139"></script>
     <script src="libs/app.bundle.min.js?v=139"></script>
     <!--#include virtual="title.html" -->
     <!--#include virtual="plugin.head.html" -->
     <!--#include virtual="static/welcomePageAdditionalContent.html" -->
+    <template id = "welcome-page-additional-content-template">
+        <div class="welcome-page-try-section">
+            <div class="welcome-try-content">
+                <div class="welcome-try-title">
+                    Secure and<br />fully-featured video conferencing
+                </div>
+                <a
+                    href="https://app.8x8.vc/payments"
+                    id="welcomeTryFree"
+                    rel="noopener"
+                    target="_blank">
+                    Try free now
+                </a>
+                <div class="no-commitments">
+                    No commitments, cancel at any time.
+                </div>
+            </div>
+            <img class="welcome-try-apps" src="images/welcome-apps-preview.png" />
+        </div>
+        <div class="welcome-page-feature-section">
+            <div class="welcome-feature-list">
+                <div class="welcome-feature-item">
+                    <div class="welcome-feature-icon">
+                        <img src="images/phone.svg" />
+                    </div>
+                    <div class="welcome-feature-title">
+                        Phone a Guest
+                    </div>
+                    The easiest way to invite someone
+                </div>
+                <div class="welcome-feature-item">
+                    <div class="welcome-feature-icon">
+                        <img src="images/voicemail.svg" />
+                    </div>
+                    <div class="welcome-feature-title">
+                        Keep a Record
+                    </div>
+                    Transcribe and share recorded meetings
+                </div>
+                <div class="welcome-feature-item">
+                    <div class="welcome-feature-icon">
+                        <img src="images/globe.svg" />
+                    </div>
+                    <div class="welcome-feature-title">
+                        Make a Statement
+                    </div>
+                    Live stream meetings to Youtube
+                </div>
+                <div class="welcome-feature-item">
+                    <div class="welcome-feature-icon">
+                        <img src="images/CC.svg" />
+                    </div>
+                    <div class="welcome-feature-title">
+                        Help a Guest
+                    </div>
+                    Deliver real-time closed caption support (English)
+                </div>
+                <div class="welcome-feature-item">
+                    <div class="welcome-feature-icon">
+                        <img src="images/shield.svg" />
+                    </div>
+                    <div class="welcome-feature-title">
+                        Set the Rules
+                    </div>
+                    Experience advanced meeting moderation and analytics
+                </div>
+                <div class="welcome-feature-item">
+                    <div class="welcome-feature-icon">
+                        <img src="images/calendar.svg" />
+                    </div>
+                    <div class="welcome-feature-title">
+                        Get Organized
+                    </div>
+                    Sync with all the popular calendars
+                </div>
+            </div>
+            <div class="mobile-separator"></div>
+            <div class="welcome-jitsi">
+                <img class="welcome-jitsi-image" src="images/welcome-jitsi.png" />
+                <img class="welcome-jitsi-image-small" src="images/welcome-jitsi-small.png" />
+                <div class="welcome-jitsi-content">
+                    <img src="images/jitsi-logo.svg" />
+                    <div class="welcome-jitsi-title">
+                        Use our free meetings solution<br/>– no account needed
+                    </div>
+                    <div class="welcome-jitsi-description">
+                        HD audio video, unlimited free meeting access for up to 50 participants at a time, End-to-End encryption, Remotely control other participants desktop, Integrations (Google, Microsoft, Slack)
+                    </div>
+                    <a
+                        href="https://meet.jit.si"
+                        id="welcomeJitsiButton"
+                        rel="noopener"
+                        target="_blank">
+                        Start a meeting
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="welcome-page-app-section">
+            <div class="welcome-app-details">
+                <div class="welcome-app-details-text large">Use it everywhere</div>
+                <div class="welcome-app-details-text bolded">
+                    Available as web, desktop & mobile app
+                </div>
+                <div class="welcome-app-details-text">
+                    Schedule, start or join HD video and audio conferences
+                    from any device or room with no friction.
+                </div>
+                <a
+                    href="https://download.8x8.vc"
+                    id="getOurAppsButton"
+                    rel="noopener"
+                    target="_blank">
+                    Get our apps
+                </a>
+            </div>
+            <div class="welcome-app-list">
+                <div class="welcome-app-row">
+                    <div class="welcome-app-item">
+                        <img src="images/windows.svg" />
+                    </div>
+                    <div class="welcome-app-item">
+                        <img src="images/osx.svg" />
+                    </div>
+                    <div class="welcome-app-item mobile-last">
+                        <img src="images/apple.svg" />
+                    </div>
+                </div>
+                <div class="welcome-app-row">
+                    <div class="welcome-app-item">
+                        <img src="images/android.svg" />
+                    </div>
+                    <div class="welcome-app-item">
+                        <img src="images/Chrome.svg" />
+                    </div>
+                    <div class="welcome-app-item">
+                        <img src="images/office365.svg" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="welcome-footer">
+            <div class="welcome-footer-row">
+                <div class="welcome-footer-description">
+                    <b>8x8 Meet on mobile</b> – download our apps and start a meeting from anywhere
+                </div>
+                <div class="welcome-footer-mobile">
+                    <a
+                        href="https://apps.apple.com/us/app/8x8-video-meetings/id1473422060"
+                        rel="noopener"
+                        target="_blank">
+                        <img src="images/apple-store-badge.svg" />
+                    </a>
+                    <a
+                        href="https://play.google.com/store/apps/details?id=com.eght.meetings"
+                        rel="noopener"
+                        target="_blank">
+                        <img src="images/google-play-badge.svg" />
+                    </a>
+                </div>
+            </div>
+            <div class="welcome-footer-separator"></div>
+            <div class="welcome-footer-row">
+                <div class="welcome-footer-links">
+                    <a
+                        href="https://app.8x8.vc/privacy-policy"
+                        rel="noopener"
+                        target="_blank">
+                        Privacy Policy
+                    </a>
+                    <a
+                        href="https://www.8x8.com/terms-and-conditions/cookies"
+                        rel="noopener"
+                        target="_blank">
+                        Cookies
+                    </a>
+                    <a
+                        href="https://app.8x8.vc/terms-and-conditions"
+                        rel="noopener"
+                        target="_blank">
+                        Terms and Conditions
+                    </a>
+                </div>
+                <div class="welcome-footer-socials">
+                    <a
+                        href="https://www.facebook.com/8x8Inc"
+                        rel="noopener"
+                        target="_blank">
+                        <img src="images/fb.svg" />
+                    </a>
+                    <a
+                        href="https://www.linkedin.com/company/8x8"
+                        rel="noopener"
+                        target="_blank">
+                        <img src="images/linkedin.svg" />
+                    </a>
+                    <a
+                        href="https://twitter.com/8x8"
+                        rel="noopener"
+                        target="_blank">
+                        <img src="images/twitter.svg" />
+                    </a>
+                </div>
+            </div>
+            <div class="welcome-footer-separator"></div>
+            <div class="welcome-footer-row">
+                <div class="welcome-footer-copyright">
+                    <img src="images/8x8-copyright-icon.svg" />
+                    © 8x8, Inc. All Rights Reserved.
+                </div>
+            </div>
+        </div>    
+    </template>                                
+    <template id="settings-toolbar-additional-content-template">
+        <div class="welcome-toolbar-buttons">
+            <a
+                href="https://app.8x8.vc?login=true"
+                id="logInButton"
+                rel="noopener"
+                target="_blank" >
+                Log In
+            </a>
+            <a
+                href="https://app.8x8.vc/payments"
+                id="signUpButton"
+                rel="noopener"
+                target="_blank">
+                Sign Up
+            </a>
+        </div>
+        <script>
+            const { _8x8VideoMeetingsUrl } = config;
+    
+            if (_8x8VideoMeetingsUrl) {
+                const logInUrl = `${_8x8VideoMeetingsUrl}/?login=true`;
+                const signUpUrl = `${_8x8VideoMeetingsUrl}/payments`;
+    
+                document.getElementById('logInButton').setAttribute('href', logInUrl);
+                document.getElementById('signUpButton').setAttribute('href', signUpUrl);
+            }
+        </script>
+    </template>
     <!--#include virtual="static/settingsToolbarAdditionalContent.html" -->
   </head>
   <body>

@@ -1,1 +1,46 @@
 /** Insert custom CSS for any additional content in the welcome page settings toolbar **/
+
+.welcome-toolbar-buttons {
+    & > :first-child {
+        margin-right: 16px;
+    }
+}
+
+#logInButton {
+    display: inline-block;
+    padding: 11px 24px;
+    min-width: 41px;
+    min-height: 18px;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -0.006em;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.16s ease-in;
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.2);
+    }
+}
+
+#signUpButton {
+    display: inline-block;
+    padding: 11px 24px;
+    min-width: 52px;
+    min-height: 18px;
+    background: #fff;
+    border-radius: 3px;
+    color: rgba(19, 21, 25, 0.87);
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -0.006em;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.16s ease-in;
+
+    &:hover {
+        background: #D5E5FF;
+    }
+}
