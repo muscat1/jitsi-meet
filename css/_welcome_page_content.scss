@@ -1,11 +1,10 @@
-/** Insert custom CSS for any additional content in the welcome page **/
 .welcome-page-content {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
     justify-content: space-between;
     position: relative;
-    padding-bottom: 288px; // Footer height
+    padding-bottom: 288px;
     background-color: #fff;
 }
 

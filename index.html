@@ -373,7 +373,7 @@
                 </div>
             </div>
         </div>    
-    </template>                                
+    </template>                  
     <template id="settings-toolbar-additional-content-template">
         <div class="welcome-toolbar-buttons">
             <a
@@ -396,13 +396,14 @@
     
             if (_8x8VideoMeetingsUrl) {
                 const logInUrl = `${_8x8VideoMeetingsUrl}/?login=true`;
-                const signUpUrl = `${_8x8VideoMeetingsUrl}/payments`;
+                const paymentsUrl = `${_8x8VideoMeetingsUrl}/payments`;
     
+                document.getElementById('welcomeTryFree').setAttribute('href', paymentsUrl);
                 document.getElementById('logInButton').setAttribute('href', logInUrl);
-                document.getElementById('signUpButton').setAttribute('href', signUpUrl);
+                document.getElementById('signUpButton').setAttribute('href', paymentsUrl);
             }
         </script>
-    </template>
+    </template>    
     <!--#include virtual="static/settingsToolbarAdditionalContent.html" -->
   </head>
   <body>
