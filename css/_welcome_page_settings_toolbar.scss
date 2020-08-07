@@ -21,6 +21,10 @@
     &:hover {
         background: rgba(255, 255, 255, 0.2);
     }
+
+    &:active {
+        background: rgba(19, 21, 25, 0.38);
+    }
 }
 
 #signUpButton {
@@ -40,5 +44,9 @@
 
     &:hover {
         background: #D5E5FF;
+    }
+
+    &:active {
+        background: #80B1FF;
     }
 }
