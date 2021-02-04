@@ -277,6 +277,13 @@
     }
 }
 
+.toolbox-icon {
+    svg {
+        display: flex;
+        margin: auto;
+    }
+}
+
 /**
  * START of fade in animation for main toolbar
  */
