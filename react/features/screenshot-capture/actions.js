@@ -1,6 +1,6 @@
 // @flow
 
-import { getLocalVideoTrack } from '../../features/base/tracks';
+import { getLocalVideoTrack } from '../base/tracks';
 import { createScreenshotCaptureEffect } from '../stream-effects/screenshot-capture';
 
 import { SET_SCREENSHOT_CAPTURE } from './actionTypes';

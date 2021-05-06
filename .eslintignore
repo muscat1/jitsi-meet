@@ -6,6 +6,7 @@ build/*
 flow-typed/*
 libs/*
 resources/*
+react/features/stream-effects/facial-recognition/models/*
 react/features/stream-effects/virtual-background/vendor/*
 load-test/*
 

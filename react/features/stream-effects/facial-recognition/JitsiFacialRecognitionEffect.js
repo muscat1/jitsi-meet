@@ -31,6 +31,12 @@ export default class JitsiFacialRecognitionEffect {
         this._onWorkerMessage = this._onWorkerMessage.bind(this);
     }
 
+    /**
+     * Starts loop to capture facial expressions.
+     *
+     * @param {MediaStream} stream - Stream to be used for processing.
+     * @returns {void}
+     */
     startEffect(stream: MediaStream) {
         this._worker = new Worker(timerWorkerScript, { name: 'Facial recognition effect worker' });
         this._worker.onmessage = this._onWorkerMessage;
@@ -56,6 +62,17 @@ export default class JitsiFacialRecognitionEffect {
         this._inputVideo.onloadeddata = null;
         this._worker.postMessage({ id: CLEAR_INTERVAL });
         this._worker.terminate();
+    }
+
+    /**
+     * Checks if the local track supports this effect.
+     *
+     * @param {JitsiLocalTrack} jitsiLocalTrack - Track to apply effect.
+     * @returns {boolean} - Returns true if this effect can run on the specified track
+     * false otherwise.
+     */
+    isEnabled(jitsiLocalTrack: Object) {
+        return jitsiLocalTrack.isVideoTrack() && jitsiLocalTrack.videoType === 'camera';
     }
 
     /**

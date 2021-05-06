@@ -18,8 +18,6 @@ export default function loadEffects(store: Object): Promise<any> {
     const screenshotCapture = state['features/screenshot-capture'];
     const virtualBackground = state['features/virtual-background'];
 
-    createFacialRecognitionEffect();
-
     const backgroundPromise = virtualBackground.backgroundEffectEnabled
         ? createVirtualBackgroundEffect(virtualBackground)
             .catch(error => {
