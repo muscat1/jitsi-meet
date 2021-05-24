@@ -113,7 +113,6 @@ import { downloadJSON } from './react/features/base/util/downloadJSON';
 import { getConferenceOptions } from './react/features/conference/functions';
 import { showDesktopPicker } from './react/features/desktop-picker';
 import { appendSuffix } from './react/features/display-name';
-import { maybeStartFacialRecognition, stopFacialRecognition } from './react/features/facial-recognition';
 import {
     maybeOpenFeedbackDialog,
     submitFeedback
@@ -1032,7 +1031,6 @@ export default {
         } else {
             // FIXME show error dialog if it fails (should be handled by react)
             muteLocalVideo(mute);
-            mute ? stopFacialRecognition() : APP.store.dispatch(maybeStartFacialRecognition())
         }
     },
 
@@ -1405,7 +1403,6 @@ export default {
                         this.localVideo = newTrack;
                         this._setSharingScreen(newTrack);
                         this.setVideoMuteStatus();
-                        APP.store.dispatch(maybeStartFacialRecognition(newTrack));
                     })
                     .then(resolve)
                     .catch(error => {
