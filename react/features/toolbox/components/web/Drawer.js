@@ -1,6 +1,6 @@
 // @flow
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useState } from 'react';
 
 import { translate } from '../../../base/i18n';
 import { Icon, IconArrowUpWide, IconArrowDownWide } from '../../../base/icons';
@@ -45,29 +45,27 @@ function Drawer({
     onClose,
     t }: Props) {
     const [ expanded, setExpanded ] = useState(false);
-    const drawerRef: Object = useRef(null);
 
     /**
-     * Closes the drawer when clicking or touching outside of it.
+     * Handles clicks within the menu, preventing the propagation of the click event.
      *
-     * @param {Event} event - Mouse down/start touch event object.
+     * @param {Object} event - The click event.
      * @returns {void}
      */
-    function handleOutsideClickOrTouch(event: Event) {
-        if (drawerRef.current && !drawerRef.current.contains(event.target)) {
-            onClose();
-        }
+    function handleInsideClick(event) {
+        event.stopPropagation();
     }
 
-    useEffect(() => {
-        window.addEventListener('mousedown', handleOutsideClickOrTouch);
-        window.addEventListener('touchstart', handleOutsideClickOrTouch);
-
-        return () => {
-            window.removeEventListener('mousedown', handleOutsideClickOrTouch);
-            window.removeEventListener('touchstart', handleOutsideClickOrTouch);
-        };
-    }, [ drawerRef ]);
+    /**
+     * Handles clicks outside of the menu, closing it, and also stopping further propagation.
+     *
+     * @param {Object} event - The click event.
+     * @returns {void}
+     */
+    function handleOutsideClick(event) {
+        event.stopPropagation();
+        onClose();
+    }
 
     /**
      * Toggles the menu state between expanded/collapsed.
@@ -95,24 +93,28 @@ function Drawer({
     return (
         isOpen ? (
             <div
-                className = { `drawer-menu${expanded ? ' expanded' : ''}` }
-                ref = { drawerRef }>
-                {canExpand && (
-                    <div
-                        aria-expanded = { expanded }
-                        aria-label = { expanded ? t('toolbar.accessibilityLabel.collapse')
-                            : t('toolbar.accessibilityLabel.expand') }
-                        className = 'drawer-toggle'
-                        onClick = { toggleExpanded }
-                        onKeyPress = { onKeyPress }
-                        role = 'button'
-                        tabIndex = { 0 }>
-                        <Icon
-                            size = { 24 }
-                            src = { expanded ? IconArrowDownWide : IconArrowUpWide } />
-                    </div>
-                )}
-                {children}
+                className = 'drawer-menu-container'
+                onClick = { handleOutsideClick }>
+                <div
+                    className = { `drawer-menu${expanded ? ' expanded' : ''}` }
+                    onClick = { handleInsideClick }>
+                    {canExpand && (
+                        <div
+                            aria-expanded = { expanded }
+                            aria-label = { expanded ? t('toolbar.accessibilityLabel.collapse')
+                                : t('toolbar.accessibilityLabel.expand') }
+                            className = 'drawer-toggle'
+                            onClick = { toggleExpanded }
+                            onKeyPress = { onKeyPress }
+                            role = 'button'
+                            tabIndex = { 0 }>
+                            <Icon
+                                size = { 24 }
+                                src = { expanded ? IconArrowDownWide : IconArrowUpWide } />
+                        </div>
+                    )}
+                    {children}
+                </div>
             </div>
         ) : null
     );
